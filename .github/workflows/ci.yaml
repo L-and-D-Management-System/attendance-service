@@ -16,44 +16,7 @@ jobs:
 
     with:
       service: "api-gateway-lnd"
-      image: ghcr.io/l-and-d-management-system/attendance-service
+      image: ghcr.io/l-and-d-management-system/attendance
       trigger: ${{ github.event_name }}
 
     secrets: inherit
- # name: attendance-service CI/CD
-
-# on:
-#   push:
-#     branches: [ main, develop ]
-#   pull_request:
-#     branches: [ main ]
-#   workflow_dispatch:
-#     inputs:
-#       release_tag:
-#         description: 'Release Tag (e.g. v1.0.0)'
-#         required: true
-#         type: string
-
-# jobs:
-#   ci:
-#     if: github.event_name != 'workflow_dispatch'
-#     uses: L-and-D-Management-System/LnD/.github/workflows/reusable-ci.yaml@main
-#     with:
-#       service_name: attendance-service
-#       image_name: attendance-service
-#       dev_manifest_path: infra_new/argocd/dev/attendance-service.yaml
-#     secrets:
-#       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-#       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-#       TOKEN: ${{ secrets.GHCR_PAT }}
-
-#   release:
-#     if: github.event_name == 'workflow_dispatch'
-#     uses: L-and-D-Management-System/LnD/.github/workflows/reusable-release.yaml@main
-#     with:
-#       release_tag: ${{ inputs.release_tag }}
-#       service_name: attendance-service
-#       dev_manifest_path: infra_new/argocd/dev/attendance-service.yaml
-#       prod_manifest_path: infra_new/argocd/prod/attendance-service.yaml
-#     secrets:
-#       TOKEN: ${{ secrets.GHCR_PAT }}
