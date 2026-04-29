@@ -16,7 +16,7 @@ jobs:
 
     with:
       service: "attendance-service"
-      image: ghcr.io/l-and-d-management-system/attendance
+      image: ghcr.io/l-and-d-management-system/attendance-service
       trigger: ${{ github.event_name }}
 
     secrets: inherit
