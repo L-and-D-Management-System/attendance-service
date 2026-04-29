@@ -15,7 +15,7 @@ jobs:
     uses: L-and-D-Management-System/l-and-d-main/.github/workflows/backend.yml@dev
 
     with:
-      service: "api-gateway-lnd"
+      service: "attendance-service"
       image: ghcr.io/l-and-d-management-system/attendance
       trigger: ${{ github.event_name }}
 
